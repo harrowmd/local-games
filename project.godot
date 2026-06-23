@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+
+config_version=5
+
+[application]
+
+config/name="Local Games"
+run/main_scene="res://games/dorking_squirrel/opening.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://games/dorking_squirrel/assets/icon_acorn.png"
+
+[autoload]
+
+GameManager="*res://core/autoload/GameManager.gd"
+WeatherService="*res://core/autoload/WeatherService.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/handheld/orientation="portrait"
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+renderer/rendering_method="mobile"

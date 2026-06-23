@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProtagonistData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/data/ProtagonistData.gd" id="1"]
+[ext_resource type="Texture2D" path="res://games/dorking_squirrel/assets/sprite_squirrel.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+creature_name = "the albino squirrel"
+sprite_texture = ExtResource("2")
+sprite_scale = 1.0
+move_speed = 260.0
+friction = 600.0
+collision_radius = 28.0

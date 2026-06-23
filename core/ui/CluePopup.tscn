@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/ui/CluePopup.gd" id="1"]
+
+[node name="CluePopup" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="Dim"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -220.0
+offset_right = 260.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Dim/Panel"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Panel/Margin"]
+theme_override_constants/separation = 10
+
+[node name="NameLabel" type="Label" parent="Dim/Panel/Margin/VBox"]
+theme_override_font_sizes/font_size = 22
+text = "Landmark"
+horizontal_alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="Dim/Panel/Margin/VBox"]
+autowrap_mode = 3
+text = "Question?"
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="Dim/Panel/Margin/VBox"]
+theme_override_constants/separation = 6
+
+[node name="FactLabel" type="Label" parent="Dim/Panel/Margin/VBox"]
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.85, 0.95, 0.8, 1)
+
+[node name="OkButton" type="Button" parent="Dim/Panel/Margin/VBox"]
+text = "Continue"

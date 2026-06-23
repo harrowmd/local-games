@@ -1,0 +1,110 @@
+{
+  "_comment": "Coordinates are pixel positions on map_background.png (1600x1600). Facts are general/Wikipedia-style knowledge written ahead of time -- double check anything load-bearing before publishing widely.",
+  "landmarks": [
+    {
+      "id": "box_hill",
+      "name": "Box Hill",
+      "x": 800, "y": 250,
+      "question": "Box Hill is part of which long-distance walking trail along the North Downs?",
+      "choices": ["Pennine Way", "North Downs Way", "South West Coast Path", "The Ridgeway"],
+      "correct_index": 1,
+      "fact": "Box Hill is a chalk hill owned by the National Trust. It hosted the cycling road race for the 2012 London Olympics."
+    },
+    {
+      "id": "denbies",
+      "name": "Denbies Wine Estate",
+      "x": 450, "y": 350,
+      "question": "Denbies Wine Estate, on the edge of Dorking, is one of England's largest what?",
+      "choices": ["Vineyards", "Cattle farms", "Orchards", "Breweries"],
+      "correct_index": 0,
+      "fact": "Denbies is one of the largest vineyards in England, set on the chalky slopes below Box Hill."
+    },
+    {
+      "id": "st_pauls",
+      "name": "St Paul's Church",
+      "x": 950, "y": 680,
+      "question": "St Paul's Church in Dorking is an example of which era of English church building?",
+      "choices": ["Norman", "Georgian", "Victorian", "Tudor"],
+      "correct_index": 2,
+      "fact": "St Paul's was built in the Victorian era to serve Dorking's growing population."
+    },
+    {
+      "id": "high_street",
+      "name": "High Street",
+      "x": 900, "y": 750,
+      "question": "Dorking's High Street is well known among collectors for having a high concentration of which kind of shop?",
+      "choices": ["Antique shops", "Car dealerships", "Fishmongers", "Bookmakers"],
+      "correct_index": 0,
+      "fact": "Dorking's High Street has long been known for its antique shops, giving the town a reputation among antique collectors."
+    },
+    {
+      "id": "fat_face",
+      "name": "Fat Face",
+      "x": 880, "y": 770,
+      "question": "Fat Face, a shop on Dorking High Street, mainly sells what?",
+      "choices": ["Clothing", "Electronics", "Furniture", "Pet supplies"],
+      "correct_index": 0,
+      "fact": "Fat Face is a clothing and lifestyle retailer with a branch on the High Street."
+    },
+    {
+      "id": "museum",
+      "name": "Dorking Museum",
+      "x": 820, "y": 820,
+      "question": "Dorking shares its name with a distinctive breed of farm animal. What kind of animal is it?",
+      "choices": ["Chicken", "Sheep", "Pig", "Goat"],
+      "correct_index": 0,
+      "fact": "Dorking Museum tells the story of the town, including the famous five-toed Dorking chicken breed associated with the area."
+    },
+    {
+      "id": "dorking_halls",
+      "name": "Dorking Halls",
+      "x": 820, "y": 700,
+      "question": "Dorking Halls is best known locally as a venue for what kind of events?",
+      "choices": ["Theatre, cinema and concerts", "Football matches", "Court trials", "Livestock auctions"],
+      "correct_index": 0,
+      "fact": "Dorking Halls is a community venue hosting theatre, cinema screenings, and concerts."
+    },
+    {
+      "id": "dorking_station",
+      "name": "Dorking Station",
+      "x": 760, "y": 1000,
+      "question": "Dorking is unusually well served by rail for its size. Roughly how many railway stations does the town have?",
+      "choices": ["1", "2", "3", "5"],
+      "correct_index": 2,
+      "fact": "Dorking has three stations: Dorking (mainline), Dorking Deepdene, and Dorking West."
+    },
+    {
+      "id": "deepdene_station",
+      "name": "Dorking Deepdene Station",
+      "x": 1150, "y": 850,
+      "question": "Dorking Deepdene station takes its name from the historic Deepdene estate nearby. What was Deepdene originally?",
+      "choices": ["A castle", "A landscaped estate and gardens", "A coal mine", "A racecourse"],
+      "correct_index": 1,
+      "fact": "Deepdene was a grand landscaped estate near Dorking with gardens dating back centuries; the station nearby takes its name from it."
+    },
+    {
+      "id": "tennis_club",
+      "name": "Tennis Club",
+      "x": 700, "y": 1150,
+      "question": "In tennis, what is it called when a player wins a game without their opponent scoring a single point?",
+      "choices": ["A love game", "A bagel", "An ace game", "A break"],
+      "correct_index": 0,
+      "fact": "Dorking Lawn Tennis Club is one of the town's long-running sports clubs."
+    },
+    {
+      "id": "sainsburys",
+      "name": "Sainsbury's",
+      "x": 1250, "y": 1150,
+      "question": "Sainsbury's, with a branch in Dorking, is one of the 'big four' supermarket chains in which country?",
+      "choices": ["United Kingdom", "France", "Germany", "USA"],
+      "correct_index": 0,
+      "fact": "Sainsbury's is one of Britain's oldest and largest supermarket chains, founded in London in 1869."
+    }
+  ],
+  "trail_acorns": [
+    {"x": 500, "y": 1200}, {"x": 560, "y": 1120}, {"x": 630, "y": 1040},
+    {"x": 700, "y": 980}, {"x": 770, "y": 920}, {"x": 850, "y": 880},
+    {"x": 950, "y": 850}, {"x": 1040, "y": 820}, {"x": 1120, "y": 800},
+    {"x": 1180, "y": 790}
+  ]
+}

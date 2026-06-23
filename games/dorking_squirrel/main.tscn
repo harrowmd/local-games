@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://core/scenes/MainGame.tscn" id="1"]
+[ext_resource type="Resource" path="res://games/dorking_squirrel/town_data.tres" id="2"]
+[ext_resource type="Resource" path="res://games/dorking_squirrel/protagonist_data.tres" id="3"]
+
+[node name="Main" instance=ExtResource("1")]
+town = ExtResource("2")
+protagonist = ExtResource("3")
