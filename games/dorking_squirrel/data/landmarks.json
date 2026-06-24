@@ -1,10 +1,10 @@
 {
-  "_comment": "Coordinates are pixel positions on map_background.png (1600x1600). Facts are general/Wikipedia-style knowledge written ahead of time -- double check anything load-bearing before publishing widely.",
+  "_comment": "Coordinates are pixel positions on map_background.png (1600x1600), spaced out so the player has to actually swipe between them (trigger radius is ~45-70px). Facts are general/Wikipedia-style knowledge written ahead of time -- double check anything load-bearing before publishing widely.",
   "landmarks": [
     {
       "id": "box_hill",
       "name": "Box Hill",
-      "x": 800, "y": 250,
+      "x": 900, "y": 200,
       "question": "Box Hill is part of which long-distance walking trail along the North Downs?",
       "choices": ["Pennine Way", "North Downs Way", "South West Coast Path", "The Ridgeway"],
       "correct_index": 1,
@@ -13,7 +13,7 @@
     {
       "id": "denbies",
       "name": "Denbies Wine Estate",
-      "x": 450, "y": 350,
+      "x": 350, "y": 300,
       "question": "Denbies Wine Estate, on the edge of Dorking, is one of England's largest what?",
       "choices": ["Vineyards", "Cattle farms", "Orchards", "Breweries"],
       "correct_index": 0,
@@ -22,7 +22,7 @@
     {
       "id": "st_pauls",
       "name": "St Paul's Church",
-      "x": 950, "y": 680,
+      "x": 1100, "y": 550,
       "question": "St Paul's Church in Dorking is an example of which era of English church building?",
       "choices": ["Norman", "Georgian", "Victorian", "Tudor"],
       "correct_index": 2,
@@ -31,7 +31,7 @@
     {
       "id": "high_street",
       "name": "High Street",
-      "x": 900, "y": 750,
+      "x": 950, "y": 700,
       "question": "Dorking's High Street is well known among collectors for having a high concentration of which kind of shop?",
       "choices": ["Antique shops", "Car dealerships", "Fishmongers", "Bookmakers"],
       "correct_index": 0,
@@ -40,7 +40,7 @@
     {
       "id": "fat_face",
       "name": "Fat Face",
-      "x": 880, "y": 770,
+      "x": 1050, "y": 850,
       "question": "Fat Face, a shop on Dorking High Street, mainly sells what?",
       "choices": ["Clothing", "Electronics", "Furniture", "Pet supplies"],
       "correct_index": 0,
@@ -49,7 +49,7 @@
     {
       "id": "museum",
       "name": "Dorking Museum",
-      "x": 820, "y": 820,
+      "x": 800, "y": 950,
       "question": "Dorking shares its name with a distinctive breed of farm animal. What kind of animal is it?",
       "choices": ["Chicken", "Sheep", "Pig", "Goat"],
       "correct_index": 0,
@@ -58,7 +58,7 @@
     {
       "id": "dorking_halls",
       "name": "Dorking Halls",
-      "x": 820, "y": 700,
+      "x": 700, "y": 750,
       "question": "Dorking Halls is best known locally as a venue for what kind of events?",
       "choices": ["Theatre, cinema and concerts", "Football matches", "Court trials", "Livestock auctions"],
       "correct_index": 0,
@@ -67,7 +67,7 @@
     {
       "id": "dorking_station",
       "name": "Dorking Station",
-      "x": 760, "y": 1000,
+      "x": 600, "y": 1100,
       "question": "Dorking is unusually well served by rail for its size. Roughly how many railway stations does the town have?",
       "choices": ["1", "2", "3", "5"],
       "correct_index": 2,
@@ -76,7 +76,7 @@
     {
       "id": "deepdene_station",
       "name": "Dorking Deepdene Station",
-      "x": 1150, "y": 850,
+      "x": 1300, "y": 950,
       "question": "Dorking Deepdene station takes its name from the historic Deepdene estate nearby. What was Deepdene originally?",
       "choices": ["A castle", "A landscaped estate and gardens", "A coal mine", "A racecourse"],
       "correct_index": 1,
@@ -85,7 +85,7 @@
     {
       "id": "tennis_club",
       "name": "Tennis Club",
-      "x": 700, "y": 1150,
+      "x": 450, "y": 1300,
       "question": "In tennis, what is it called when a player wins a game without their opponent scoring a single point?",
       "choices": ["A love game", "A bagel", "An ace game", "A break"],
       "correct_index": 0,
@@ -94,7 +94,7 @@
     {
       "id": "sainsburys",
       "name": "Sainsbury's",
-      "x": 1250, "y": 1150,
+      "x": 1400, "y": 1300,
       "question": "Sainsbury's, with a branch in Dorking, is one of the 'big four' supermarket chains in which country?",
       "choices": ["United Kingdom", "France", "Germany", "USA"],
       "correct_index": 0,
@@ -102,9 +102,9 @@
     }
   ],
   "trail_acorns": [
-    {"x": 500, "y": 1200}, {"x": 560, "y": 1120}, {"x": 630, "y": 1040},
-    {"x": 700, "y": 980}, {"x": 770, "y": 920}, {"x": 850, "y": 880},
-    {"x": 950, "y": 850}, {"x": 1040, "y": 820}, {"x": 1120, "y": 800},
-    {"x": 1180, "y": 790}
+    {"x": 420, "y": 1380}, {"x": 540, "y": 1300}, {"x": 650, "y": 1200},
+    {"x": 700, "y": 1050}, {"x": 780, "y": 920}, {"x": 900, "y": 820},
+    {"x": 1080, "y": 700}, {"x": 1180, "y": 750}, {"x": 1300, "y": 720},
+    {"x": 1400, "y": 700}
   ]
 }

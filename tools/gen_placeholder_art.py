@@ -100,6 +100,57 @@ def gen_squirrel(path, size=160):
     save(img, path)
 
 
+def gen_explosion(path, size=200):
+    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    cx, cy = size / 2, size / 2
+    spikes = 10
+    outer = size * 0.48
+    inner = size * 0.18
+    points = []
+    for i in range(spikes * 2):
+        angle = math.pi * i / spikes
+        r = outer if i % 2 == 0 else inner
+        points.append((cx + r * math.cos(angle), cy + r * math.sin(angle)))
+    d.polygon(points, fill=(255, 200, 60, 255))
+    d.ellipse([cx - inner, cy - inner, cx + inner, cy + inner], fill=(255, 120, 40, 255))
+    d.ellipse([cx - inner * 0.5, cy - inner * 0.5, cx + inner * 0.5, cy + inner * 0.5], fill=(255, 245, 200, 255))
+    save(img, path)
+
+
+def gen_fox(path, size=160):
+    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    orange = (216, 110, 40, 255)
+    dark = (90, 50, 25, 255)
+    white = (250, 248, 240, 255)
+    outline = (140, 75, 30, 255)
+
+    # tail
+    d.polygon([
+        (size * 0.55, size * 0.55), (size * 0.98, size * 0.30),
+        (size * 0.92, size * 0.55), (size * 0.62, size * 0.70),
+    ], fill=orange, outline=outline)
+    d.ellipse([size * 0.80, size * 0.26, size * 0.96, size * 0.42], fill=white)
+
+    # body
+    d.ellipse([size * 0.18, size * 0.42, size * 0.62, size * 0.85], fill=orange, outline=outline, width=3)
+    # head
+    d.ellipse([size * 0.06, size * 0.22, size * 0.40, size * 0.56], fill=orange, outline=outline, width=3)
+    # ears
+    d.polygon([(size * 0.08, size * 0.24), (size * 0.16, size * 0.06), (size * 0.22, size * 0.24)], fill=orange, outline=outline)
+    d.polygon([(size * 0.26, size * 0.22), (size * 0.32, size * 0.04), (size * 0.38, size * 0.22)], fill=orange, outline=outline)
+    # snout
+    d.polygon([(size * 0.02, size * 0.40), (size * 0.18, size * 0.36), (size * 0.18, size * 0.48)], fill=white)
+    d.ellipse([size * 0.02, size * 0.42, size * 0.08, size * 0.48], fill=dark)
+    # eye
+    d.ellipse([size * 0.20, size * 0.32, size * 0.26, size * 0.38], fill=dark)
+    # paws
+    d.ellipse([size * 0.20, size * 0.74, size * 0.32, size * 0.86], fill=dark)
+
+    save(img, path)
+
+
 def gen_acorn(path, size=64):
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -187,8 +238,14 @@ def gen_photo(path, preset_name, w=900, h=1400, caption="Box Hill, Dorking"):
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else "."
     os.makedirs(out, exist_ok=True)
+
+    core_fx_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "core", "assets", "fx")
+    os.makedirs(core_fx_dir, exist_ok=True)
+    gen_explosion(os.path.join(core_fx_dir, "explosion.png"))
+
     gen_map(os.path.join(out, "map_background.png"))
     gen_squirrel(os.path.join(out, "sprite_squirrel.png"))
+    gen_fox(os.path.join(out, "sprite_fox.png"))
     gen_acorn(os.path.join(out, "icon_acorn.png"))
     gen_pin(os.path.join(out, "icon_landmark_pin.png"))
     gen_home_icon(os.path.join(out, "icon_home.png"))

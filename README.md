@@ -17,6 +17,11 @@ landmark to get a clue question; answer correctly to calm the squirrel
 down and gain an acorn. Collect enough acorns, then walk into the home
 marker to win. Letting the fear meter fill up ends the run.
 
+## TODO
+
+- Sound effects (fox hit/explosion, squirrel caught, acorn pickup, quiz
+  correct/wrong, footsteps) -- not added yet, visuals only for now.
+
 ## The Dorking Squirrel
 
 The famous albino Dorking Squirrel is loose in Dorking. You're the

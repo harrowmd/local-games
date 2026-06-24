@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/data/EnemyData.gd" id="1"]
+[ext_resource type="Texture2D" path="res://games/dorking_squirrel/assets/sprite_fox.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+enemy_name = "Fox"
+sprite_texture = ExtResource("2")
+speed = 80.0
+catch_radius = 40.0
+respawn_delay = 3.0
+spawn_delay = 10.0
+projectile_speed = 480.0

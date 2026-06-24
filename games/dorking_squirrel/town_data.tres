@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="TownData" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="TownData" load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://core/data/TownData.gd" id="1"]
+[ext_resource type="Resource" path="res://games/dorking_squirrel/fox_data.tres" id="11"]
 [ext_resource type="Texture2D" path="res://games/dorking_squirrel/assets/map_background.png" id="2"]
 [ext_resource type="Texture2D" path="res://games/dorking_squirrel/assets/icon_landmark_pin.png" id="3"]
 [ext_resource type="Texture2D" path="res://games/dorking_squirrel/assets/icon_acorn.png" id="4"]
@@ -15,11 +16,11 @@
 script = ExtResource("1")
 town_name = "The Dorking Squirrel"
 home_label = "Presselly, Deepdene Avenue"
-intro_text = "The famous albino Dorking Squirrel is loose in town! Guide it safely past every landmark, gather acorn courage, and bring it home to Presselly, Deepdene Avenue (RH4 1ST)."
+intro_text = "The famous albino Dorking Squirrel is loose in town! Guide it safely past every landmark, gather acorn courage, dodge the fox, and bring it home to Presselly, Deepdene Avenue (RH4 1ST)."
 map_texture = ExtResource("2")
 map_size = Vector2(1600, 1600)
-start_position = Vector2(500, 1200)
-home_position = Vector2(1230, 780)
+start_position = Vector2(300, 1450)
+home_position = Vector2(1400, 700)
 home_radius = 70.0
 landmark_data_path = "res://games/dorking_squirrel/data/landmarks.json"
 icon_landmark_pin = ExtResource("3")
@@ -33,7 +34,7 @@ photo_rainy = ExtResource("8")
 photo_snowy = ExtResource("9")
 photo_night = ExtResource("10")
 photo_default = ExtResource("7")
-acorns_required = 8
+enemy_data = ExtResource("11")
 fear_loss_per_correct = 12.0
 fear_gain_per_wrong = 18.0
 fear_passive_gain_per_sec = 0.4

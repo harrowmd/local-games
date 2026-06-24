@@ -35,26 +35,53 @@ offset_left = 20.0
 offset_top = 46.0
 offset_right = 320.0
 offset_bottom = 70.0
-text = "Acorns: 0 / 8"
+text = "Acorns: 0"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 
-[node name="ToastLabel" type="Label" parent="Control"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.85
-anchor_right = 0.5
-anchor_bottom = 0.85
-offset_left = -200.0
-offset_right = 200.0
-offset_bottom = 30.0
-grow_horizontal = 2
+[node name="LandmarksLabel" type="Label" parent="Control"]
+offset_left = 20.0
+offset_top = 76.0
+offset_right = 320.0
+offset_bottom = 100.0
+text = "Landmarks: 0 / 11"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+
+[node name="BottomVBox" type="VBoxContainer" parent="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Spacer" type="Control" parent="Control/BottomVBox"]
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ToastLabel" type="Label" parent="Control/BottomVBox"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 4
 horizontal_alignment = 1
 text = ""
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+
+[node name="ThrowButton" type="Button" parent="Control/BottomVBox"]
+custom_minimum_size = Vector2(180, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme_override_font_sizes/font_size = 20
+text = "Throw Acorn"
+
+[node name="BottomMargin" type="Control" parent="Control/BottomVBox"]
+custom_minimum_size = Vector2(0, 40)
+mouse_filter = 2
 
 [node name="ToastTimer" type="Timer" parent="."]
 wait_time = 2.5

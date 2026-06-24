@@ -30,5 +30,11 @@ func _on_body_entered(body: Node) -> void:
 	reached.emit(data)
 
 
+func _on_landmark_answered(id: String, correct: bool) -> void:
+	if correct and id == data.get("id", ""):
+		queue_free()
+
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	GameManager.landmark_answered.connect(_on_landmark_answered)

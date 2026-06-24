@@ -29,8 +29,11 @@ class_name TownData
 @export var photo_night: Texture2D
 @export var photo_default: Texture2D
 
+@export_group("Predator (optional)")
+@export var enemy_data: EnemyData
+@export var enemy_spawn_margin: float = 80.0
+
 @export_group("Difficulty")
-@export var acorns_required: int = 8
 @export var fear_loss_per_correct: float = 12.0
 @export var fear_gain_per_wrong: float = 18.0
 @export var fear_passive_gain_per_sec: float = 0.4

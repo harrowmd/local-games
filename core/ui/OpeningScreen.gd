@@ -15,8 +15,8 @@ class_name OpeningScreen
 @onready var datetime_label: Label = $Overlay/VBox/DateTimeLabel
 @onready var weather_label: Label = $Overlay/VBox/WeatherLabel
 @onready var intro_label: Label = $Overlay/VBox/IntroLabel
-@onready var sprite_rect: TextureRect = $Overlay/SpriteRect
-@onready var start_button: Button = $Overlay/StartButton
+@onready var sprite_rect: TextureRect = $Overlay/VBox/SpriteRect
+@onready var start_button: Button = $Overlay/VBox/StartButton
 @onready var clock_timer: Timer = $ClockTimer
 
 
