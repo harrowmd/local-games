@@ -15,6 +15,7 @@ config/icon="res://games/dorking_squirrel/assets/icon_acorn.png"
 
 GameManager="*res://core/autoload/GameManager.gd"
 WeatherService="*res://core/autoload/WeatherService.gd"
+PhotoService="*res://core/autoload/PhotoService.gd"
 
 [display]
 

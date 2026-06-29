@@ -16,7 +16,7 @@
 script = ExtResource("1")
 town_name = "The Dorking Squirrel"
 home_label = "Presselly, Deepdene Avenue"
-intro_text = "The famous albino Dorking Squirrel is loose in town! Guide it safely past every landmark, gather acorn courage, dodge the fox, and bring it home to Presselly, Deepdene Avenue (RH4 1ST)."
+intro_text = "The famous albino Dorking Squirrel is on the loose. Guide him safely home to Deepdene Avenue. On the way, visit all the famous landmarks and answer the questions correctly. Collect as many acorns as you can. If you see the fox throw an acorn at him."
 map_texture = ExtResource("2")
 map_size = Vector2(1600, 1600)
 start_position = Vector2(300, 1450)

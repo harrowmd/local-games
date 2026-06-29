@@ -20,6 +20,9 @@ class_name OpeningScreen
 @onready var clock_timer: Timer = $ClockTimer
 
 
+var _geograph_loaded := false
+
+
 func _ready() -> void:
 	title_label.text = town.town_name
 	intro_label.text = town.intro_text
@@ -31,6 +34,9 @@ func _ready() -> void:
 	WeatherService.weather_ready.connect(_on_weather_ready)
 	WeatherService.weather_failed.connect(_on_weather_failed)
 	WeatherService.fetch(town.weather_latitude, town.weather_longitude)
+	PhotoService.photo_ready.connect(_on_photo_ready)
+	PhotoService.photo_failed.connect(_on_photo_failed)
+	PhotoService.fetch()
 	start_button.pressed.connect(_on_start_pressed)
 
 
@@ -43,6 +49,15 @@ func _is_night(dt: Dictionary) -> bool:
 	return dt.hour < 6 or dt.hour >= 21
 
 
+func _on_photo_ready(texture: Texture2D) -> void:
+	photo_rect.texture = texture
+	_geograph_loaded = true
+
+
+func _on_photo_failed() -> void:
+	pass  # weather callback will set a fallback photo
+
+
 func _on_weather_ready(data: Dictionary) -> void:
 	var temp = data.get("temperature", null)
 	var code := int(data.get("weathercode", 0))
@@ -50,12 +65,14 @@ func _on_weather_ready(data: Dictionary) -> void:
 	if _is_night(Time.get_datetime_dict_from_system()):
 		condition = "night"
 	weather_label.text = "%s, %s°C" % [condition.capitalize(), str(temp)]
-	photo_rect.texture = _photo_for(condition)
+	if not _geograph_loaded:
+		photo_rect.texture = _photo_for(condition)
 
 
 func _on_weather_failed() -> void:
 	weather_label.text = "Weather unavailable"
-	photo_rect.texture = town.photo_night if _is_night(Time.get_datetime_dict_from_system()) else town.photo_default
+	if not _geograph_loaded:
+		photo_rect.texture = town.photo_night if _is_night(Time.get_datetime_dict_from_system()) else town.photo_default
 
 
 func _photo_for(condition: String) -> Texture2D:
