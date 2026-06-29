@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://syxlui6kc0ah"
-path="res://.godot/imported/sprite_squirrel.png-85215258da87283094684fca02a26f06.ctex"
+uid="uid://trmgd1ynoqys"
+path="res://.godot/imported/launcher_adaptive_432.png-c812a4616b7f8c98c52f86e02ab888b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://games/dorking_squirrel/assets/sprite_squirrel.png"
-dest_files=["res://.godot/imported/sprite_squirrel.png-85215258da87283094684fca02a26f06.ctex"]
+source_file="res://games/dorking_squirrel/assets/launcher_adaptive_432.png"
+dest_files=["res://.godot/imported/launcher_adaptive_432.png-c812a4616b7f8c98c52f86e02ab888b9.ctex"]
 
 [params]
 
