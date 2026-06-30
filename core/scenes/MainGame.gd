@@ -26,6 +26,7 @@ const ExplosionEffectScene := preload("res://core/game/ExplosionEffect.tscn")
 @onready var game_over_layer: CanvasLayer = $GameOverLayer
 @onready var result_label: Label = $GameOverLayer/Panel/Margin/VBox/ResultLabel
 @onready var restart_button: Button = $GameOverLayer/Panel/Margin/VBox/RestartButton
+@onready var exit_button: Button = $GameOverLayer/Panel/Margin/VBox/ExitButton
 @onready var ambient_timer: Timer = $AmbientFearTimer
 @onready var fox_spawn_timer: Timer = $FoxSpawnTimer
 
@@ -60,6 +61,7 @@ func _ready() -> void:
 
 	GameManager.game_over.connect(_on_game_over)
 	restart_button.pressed.connect(_on_restart_pressed)
+	exit_button.pressed.connect(func(): get_tree().quit())
 	ambient_timer.wait_time = 1.0
 	ambient_timer.timeout.connect(_on_ambient_tick)
 	ambient_timer.start()

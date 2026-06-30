@@ -27,6 +27,7 @@ var _http_info: HTTPRequest
 var _http_img:  HTTPRequest
 var _photo_ids: Array = []
 var _target_id: int = 0
+var _force_fresh: bool = false
 
 
 func _ready() -> void:
@@ -43,11 +44,12 @@ func _ready() -> void:
 	_http_img.request_completed.connect(_on_img_done)
 
 
-func fetch() -> void:
+func fetch(force_fresh: bool = false) -> void:
+	_force_fresh = force_fresh
 	var today := Time.get_date_string_from_system()
 
-	# Return cached photo if it's from today
-	if FileAccess.file_exists(CACHE_META_FILE) and FileAccess.file_exists(CACHE_IMG_FILE):
+	# Return cached photo if not forcing a fresh fetch
+	if not force_fresh and FileAccess.file_exists(CACHE_META_FILE) and FileAccess.file_exists(CACHE_IMG_FILE):
 		var f := FileAccess.open(CACHE_META_FILE, FileAccess.READ)
 		var meta = JSON.parse_string(f.get_as_text())
 		f.close()
@@ -55,12 +57,15 @@ func fetch() -> void:
 			_emit_cached()
 			return
 
-	# Pick location and photo index deterministically for today
-	var dt := Time.get_datetime_dict_from_system()
-	var day_of_year := _day_of_year(dt.year, dt.month, dt.day)
-	var loc: String = LOCATIONS[day_of_year % LOCATIONS.size()]
-	var url: String = SYNDICATOR_URL % loc
-	_http_feed.request(url)
+	# Pick a random location when forcing fresh, otherwise use today's deterministic slot
+	var loc: String
+	if force_fresh:
+		loc = LOCATIONS[randi() % LOCATIONS.size()]
+	else:
+		var dt := Time.get_datetime_dict_from_system()
+		var day_of_year := _day_of_year(dt.year, dt.month, dt.day)
+		loc = LOCATIONS[day_of_year % LOCATIONS.size()]
+	_http_feed.request(SYNDICATOR_URL % loc)
 
 
 func _on_feed_done(result: int, code: int, _h: PackedStringArray, body: PackedByteArray) -> void:
@@ -81,9 +86,13 @@ func _on_feed_done(result: int, code: int, _h: PackedStringArray, body: PackedBy
 		photo_failed.emit()
 		return
 
-	var dt := Time.get_datetime_dict_from_system()
-	var day_of_year := _day_of_year(dt.year, dt.month, dt.day)
-	var idx := (day_of_year / LOCATIONS.size()) % _photo_ids.size()
+	var idx: int
+	if _force_fresh:
+		idx = randi() % _photo_ids.size()
+	else:
+		var dt := Time.get_datetime_dict_from_system()
+		var day_of_year := _day_of_year(dt.year, dt.month, dt.day)
+		idx = (day_of_year / LOCATIONS.size()) % _photo_ids.size()
 	_target_id = _photo_ids[idx]
 	_http_info.request(PHOTO_INFO_URL % _target_id)
 

@@ -35,6 +35,7 @@ func show_clue(data: Dictionary) -> void:
 	for i in range(choices.size()):
 		var b := Button.new()
 		b.text = choices[i]
+		b.add_theme_font_size_override("font_size", 29)
 		b.pressed.connect(_on_choice_pressed.bind(i))
 		choices_container.add_child(b)
 	visible = true

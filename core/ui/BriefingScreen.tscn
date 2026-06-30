@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://core/ui/OpeningScreen.gd" id="1"]
+[ext_resource type="Script" path="res://core/ui/BriefingScreen.gd" id="1"]
 
-[node name="OpeningScreen" type="Control"]
+[node name="BriefingScreen" type="Control"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,7 +13,7 @@ expand_mode = 1
 stretch_mode = 0
 
 [node name="TopVBox" type="VBoxContainer" parent="."]
-theme_override_constants/separation = 6
+theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="Label" parent="TopVBox"]
 theme_override_font_sizes/font_size = 64
@@ -22,22 +22,15 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Town Game"
 
-[node name="DateTimeLabel" type="Label" parent="TopVBox"]
-theme_override_font_sizes/font_size = 72
+[node name="IntroLabel" type="Label" parent="TopVBox"]
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 60
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-text = "0000-00-00 00:00"
-
-[node name="WeatherLabel" type="Label" parent="TopVBox"]
-theme_override_font_sizes/font_size = 72
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-text = "Checking local weather..."
+text = ""
 
 [node name="BottomBar" type="HBoxContainer" parent="."]
-theme_override_constants/separation = 0
 
 [node name="ExitButton" type="Button" parent="BottomBar"]
 custom_minimum_size = Vector2(180, 80)
@@ -57,11 +50,7 @@ stretch_mode = 5
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="StartButton" type="Button" parent="BottomBar"]
-custom_minimum_size = Vector2(180, 80)
+[node name="StartGameButton" type="Button" parent="BottomBar"]
+custom_minimum_size = Vector2(220, 80)
 theme_override_font_sizes/font_size = 44
-text = "Start"
-
-[node name="ClockTimer" type="Timer" parent="."]
-wait_time = 1.0
-autostart = true
+text = "Start Game"
